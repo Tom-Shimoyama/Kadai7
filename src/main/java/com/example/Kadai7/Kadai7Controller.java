@@ -17,15 +17,8 @@ import java.util.Map;
 @RestController
 public class Kadai7Controller {
 
-    @GetMapping("/names")
-    @NotEmpty
-    @Valid
-    public List<@NotBlank String> getNames() {
-        return List.of("Shimoyama", "Nakano","");
-    }
-
     @PostMapping("/names")
-    public ResponseEntity<String> creteName(@RequestBody CreateForm form){
+    public ResponseEntity<String> creteName(@RequestBody @Valid  CreateForm form){
         //登録処理は省略
         URI url = UriComponentsBuilder.fromUriString("http://localhost:8080")
                 .path("names/id")
