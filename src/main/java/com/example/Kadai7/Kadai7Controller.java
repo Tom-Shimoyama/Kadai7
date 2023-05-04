@@ -29,7 +29,8 @@ public class Kadai7Controller {
 
     @PatchMapping("/names/{id}")
     public ResponseEntity<Map<String, String>> update(@PathVariable("id") int id,
-                                                      @RequestBody UpdateForm form) {
+                                                      @RequestBody
+                                                      @Valid UpdateForm form) {
         // 更新処理は省略
         return ResponseEntity.ok(Map.of("message", "name successfully updated"));
     }
